@@ -2,7 +2,8 @@ import time, os
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-model_id = "deepseek-ai/deepseek-moe-16b-base"
+# model_id = "deepseek-ai/deepseek-moe-16b-base"
+model_id = "llama-moe/LLaMA-MoE-v1-3_5B-2_8"
 # flash_attn!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 precision = torch.float16
 device_map_auto = "auto"
@@ -74,13 +75,13 @@ if __name__ == "__main__":
     runExp(repeats, "batching", new_tokens)
     time.sleep(1)
     
-    # 使用join
-    tmpFilePath = os.path.join(folder_name, tmpfile_name)
-    FilePath = os.path.join(folder_name, file_name)    
-    os.mknod(tmpFilePath)
+    # # 使用join
+    # tmpFilePath = os.path.join(folder_name, tmpfile_name)
+    # FilePath = os.path.join(folder_name, file_name)    
+    # os.mknod(tmpFilePath)
     
-    end_to_end = runExp(repeats, "batching", new_tokens)
+    # end_to_end = runExp(repeats, "batching", new_tokens)
         
-    os.rename(tmpFilePath, FilePath)    
-    with open(FilePath, "a") as file:
-        file.write(str(end_to_end))
+    # os.rename(tmpFilePath, FilePath)    
+    # with open(FilePath, "a") as file:
+    #     file.write(str(end_to_end))

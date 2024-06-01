@@ -5,13 +5,14 @@ def process_file(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
                 
-        tail_10 = lines[-10:]
+        tail_10 = lines[-11:-1]
         
         time_ = []  
         cnt_ = [] 
                 
         for line in tail_10:
             parts = line.strip().split(',')
+            # print(parts)
             cnt = int(parts[0].split('=')[1])
             time = float(parts[1].split('=')[1])
             cnt_.append(cnt)
@@ -92,8 +93,8 @@ def main(directory):
     plt.ylabel("Delay (ms)")
     plt.grid(True)
     plt.xticks(batch_list)
-    plt.savefig("single_expert.png")
+    plt.savefig("(deepseek) single_expert.png")
 
 if __name__ == "__main__":
-    directory = 'measure_data_expert'  
+    directory = 'measure_data_deepseek_expert'  
     main(directory)
