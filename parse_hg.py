@@ -11,7 +11,7 @@ def process_file(file_path):
         att_values = []
         moe_values = []
                 
-        for line in lines[:192]:    mixtral
+        for line in lines[:192]:    #mixtral
         # for line in lines[:168]:        
             parts = line.strip().split(',')
             print(parts)
@@ -84,7 +84,7 @@ def main(directory):
         print(f"  Average MOE (first token): {data[4]:.2f}")
         print()
 
-    plot_results(results)
+    # plot_results(results)
 
 if __name__ == "__main__":
     # [0.66, 3.31, 3.32, 3.53, 3.59, 3.62, 4.49, 5.65, 8.69]
