@@ -1,5 +1,7 @@
 # huggingface
 
+df -h
+
 pip install -U huggingface_hub
 export HF_ENDPOINT=https://hf-mirror.com
 
@@ -7,6 +9,9 @@ sudo apt-get install aria2
 wget https://hf-mirror.com/hfd/hfd.sh
 chmod a+x hfd.sh
 ./hfd.sh [model_name] --tool aria2c -x 8    (1-16)
+
+./hfd.sh llama-moe/LLaMA-MoE-v1-3_5B-2_8 --tool aria2c -x 12
+
 
 git config --global user.email "zhexiangzhang@163.com"
 git config --global user.name "zhexiangzhang"
